@@ -233,7 +233,7 @@ Each run is stored as `results/<ALG>/fold<k>_seed<s>.json`:
 | Field | Content |
 |---|---|
 | `protocol` | all settings of the run |
-| `front` | every panel of the final non-dominated set: features, blocks, size, assay cost, inner error and its standard error, and outer-test macro-F1, macro-AUC, accuracy, and per-class F1 (runs made with the current version also store Cohen's kappa) |
+| `front` | every panel of the final front, the set of panels non-dominated in the inner objectives (for runs of RVEA and the Omni-optimizer stored with dominated members of the final population, `mopoise.aggregate.load_run` removes these members and recomputes the test-side hypervolume, as all analysis scripts do): features, blocks, size, assay cost, inner error and its standard error, and outer-test macro-F1, macro-AUC, accuracy, and per-class F1 (runs made with the current version also store Cohen's kappa) |
 | `selected` | index of the one-standard-error panel and of the panel per assay budget |
 | `hypervolume` | inner and test-side hypervolume |
 | `hv_curve` | inner hypervolume against the number of evaluations |
